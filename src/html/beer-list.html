@@ -16,13 +16,13 @@
 <div class="row" ng-repeat="checkin in listCtrl.checkIns">
   <div class="col s12">
     <ng-rate-it ng-model="test.rateit"></ng-rate-it>
-    <h3 class="header">{{checkin.beer.beer_name}} - <small>{{checkin.brewery.brewery_name}}</small><img src="{{checkin.beer.beer_label}}" alt="beer" class="circle responsive-img"></h3>
+    <h3 class="header">{{checkin.beer.beer_name}} - <small>{{checkin.brewery.brewery_name}}</small><img ng-if="checkin.beer.beer_label" src="{{checkin.beer.beer_label}}" alt="beer" class="circle responsive-img"></h3>
     <div class="card horizontal">
       <div class="card-stacked">
         <div class="card-content">
           <p>{{checkin.beer.beer_abv}}% abv</p>
           <p>{{checkin.beer.beer_style}}</p>
-          <a href="" data-target="modal{{$index}}" modal><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
+          <a href="" data-target="modal{{$index}}" modal ng-if="checkin.venue.venue_name"><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
           <p>{{checkin.created_at | dateFormat | date:'longDate'}}</p>
           <p>{{checkin.checkin_comment}}</p>
           <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
@@ -34,10 +34,10 @@
         </div>
       </div>
     </div>
-    <div id="modal{{$index}}" class="modal">
+    <div id="modal{{$index}}" class="modal" ng-if="checkin.venue.venue_name">
       <div class="modal-content center-align">
         <h4>{{checkin.venue.venue_name}}</h4>
-        <img class="responsive-img" src="https://maps.googleapis.com/maps/api/staticmap?center={{checkin.venue.location.lat}},{{checkin.venue.location.lng}}&zoom=12&size=600x300&maptype=roadmap&markers=color:blue%7C{{checkin.venue.location.lat}},{{checkin.venue.location.lng}}" alt="">
+        <img class="responsive-img" src="https://maps.googleapis.com/maps/api/staticmap?center={{checkin.venue.location.lat}},{{checkin.venue.location.lng}}&zoom=12&size=600x300&maptype=roadmap&markers=color:blue%7C{{checkin.venue.location.lat}},{{checkin.venue.location.lng}}&key=AIzaSyCJFMlJMIdwv3cTxbHhOFYR2Z8obJlINes" alt="">
       </div>
     </div>
   </div>

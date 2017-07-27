@@ -12,26 +12,21 @@
   </head>
 
   <body ng-cloak>
-
+    <nav class="indigo">
+      <div class="nav-wrapper">
+        <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="true"><i class="medium material-icons">menu</i></a>
+        <ul class="hide-on-med-and-down">
+          <li><a ng-href="/#/list">Latest Beers</a></li>
+          <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
+        </ul>
+        <ul class="side-nav" id="nav-mobile">
+          <li><a ng-href="/#/list">Latest Beers</a></li>
+          <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
+        </ul>
+      </div>
+    </nav>
     <header class="header indigo z-depth-1">
       <h1>My Beers!</h1>
-      <nav class="indigo">
-        <div class="nav-wrapper">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-          <ul class="hide-on-med-and-down">
-            <li><a href="/">about me</a></li>
-            <li><a href="/resume">resume</a></li>
-            <li><a href="/contact">contact</a></li>
-            <li><a href="/resources">resources</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo" style="left: -250px;">
-            <li><a href="/">about me</a></li>
-            <li><a href="/resume">resume</a></li>
-            <li><a href="/contact">contact</a></li>
-            <li><a href="/resources">resources</a></li>
-          </ul>
-        </div>
-      </nav>
     </header>
 
     <div class="container">
