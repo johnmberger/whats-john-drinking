@@ -10,9 +10,11 @@
     let vm = this;
 
     vm.getBeers = () => {
+      vm.loading = true;
       getTopTen.getBeers()
       .then((res, err) => {
         vm.topTenBeers = res.data.response.beers.items;
+        vm.loading = false;
       })
       .catch(() => vm.error = 'Hm, something went wrong.');
     };
