@@ -12,19 +12,21 @@
   </head>
 
   <body ng-cloak>
-    <nav class="indigo">
-      <div class="nav-wrapper">
-        <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="true"><i class="medium material-icons">menu</i></a>
-        <ul class="hide-on-med-and-down">
-          <li><a ng-href="/#/list">Latest Beers</a></li>
-          <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
-        </ul>
-        <ul class="side-nav" id="nav-mobile">
-          <li><a ng-href="/#/list">Latest Beers</a></li>
-          <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav class="indigo">
+        <div class="nav-wrapper">
+          <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="true"><i class="medium material-icons">menu</i></a>
+          <ul class="hide-on-med-and-down">
+            <li><a ng-href="whats-john-drinking/#/list">Latest Beers</a></li>
+            <li><a ng-href="whats-john-drinking/#/top-ten">Top Ten Beers</a></li>
+          </ul>
+          <ul class="side-nav" id="nav-mobile">
+            <li><a ng-href="/#/list">Latest Beers</a></li>
+            <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <header class="header indigo z-depth-1">
       <h1>My Beers!</h1>
     </header>
@@ -42,8 +44,6 @@
     <!-- app + config -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
-    <!-- nav component -->
-    <script type="text/javascript" src="js/components/nav/nav.controller.js"></script>
     <!-- beer list component -->
     <script type="text/javascript" src="js/components/list/list.controller.js"></script>
     <script type="text/javascript" src="js/components/list/list.service.js"></script>
