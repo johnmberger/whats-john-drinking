@@ -14,7 +14,7 @@
       $templateCache.removeAll();
     });
 
-    function appConfig($routeProvider) {
+    function appConfig($routeProvider, $locationProvider) {
       $routeProvider
       .when('/list', {
         templateUrl: 'html/beer-list.html',
@@ -30,6 +30,8 @@
         templateUrl: 'html/main.html'
       })
       .otherwise('/');
+
+      $locationProvider.html5Mode(true);
     }
 
 })();
