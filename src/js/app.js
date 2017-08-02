@@ -11,6 +11,7 @@
       'beerTracker.config',
       'beerTracker.components.list',
       'beerTracker.components.topTen',
+      'beerTracker.components.stats',
       'getBeers',
       'getTopTen'
     ]);

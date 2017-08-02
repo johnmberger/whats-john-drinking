@@ -26,6 +26,9 @@
         controller: 'topTenController',
         controllerAs: 'topTenCtrl'
       })
+      .when('/', {
+        templateUrl: 'html/main.html'
+      })
       .otherwise('/');
     }
 
