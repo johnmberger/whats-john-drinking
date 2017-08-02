@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>My Latest Beers!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <title>What's John Drinking</title>
     <link rel="stylesheet" href="./css/main.css">
     <!-- google icons -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,28 +13,28 @@
   </head>
 
   <body ng-cloak>
-    <div class="navbar-fixed">
-      <nav class="indigo">
-        <div class="nav-wrapper">
-          <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="true"><i class="medium material-icons">menu</i></a>
-          <ul class="hide-on-med-and-down">
-            <li><a ng-href="whats-john-drinking/#/list">Latest Beers</a></li>
-            <li><a ng-href="whats-john-drinking/#/top-ten">Top Ten Beers</a></li>
-          </ul>
-          <ul class="side-nav" id="nav-mobile">
-            <li><a ng-href="/#/list">Latest Beers</a></li>
-            <li><a ng-href="/#/top-ten">Top Ten Beers</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <header class="header indigo z-depth-1">
-      <h1>My Beers!</h1>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="indigo">
+          <div class="nav-wrapper">
+            <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="true"><i class="medium material-icons">menu</i></a>
+            <ul class="hide-on-med-and-down">
+              <li><a ng-href="whats-john-drinking/#/list">Latest Beers</a></li>
+              <li><a ng-href="whats-john-drinking/#/top-ten">Top Ten Beers</a></li>
+              <li><a ng-href="whats-john-drinking/#/stats">Beer Stats</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <ul class="side-nav" id="nav-mobile">
+        <li><a ng-href="whats-john-drinking/#/list">Latest Beers</a></li>
+        <li><a ng-href="whats-john-drinking/#/top-ten">Top Ten Beers</a></li>
+        <li><a ng-href="whats-john-drinking/#/stats">Beer Stats</a></li>
+      </ul>
     </header>
 
-    <div class="container">
-      <div ng-view></div>
-    </div>
+
+    <div ng-view></div>
 
     <!-- scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -50,5 +51,9 @@
     <!-- top ten component -->
     <script type="text/javascript" src="js/components/top-ten/top-ten.controller.js"></script>
     <script type="text/javascript" src="js/components/top-ten/top-ten.service.js"></script>
+    <!-- stats component -->
+    <script type="text/javascript" src="js/components/stats/stats.controller.js"></script>
+    <script type="text/javascript" src="js/components/stats/stats.service.js"></script>
+
   </body>
 </html>

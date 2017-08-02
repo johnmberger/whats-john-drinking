@@ -18,9 +18,12 @@
         } else {
           vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
         }
+        vm.loading = false;
       })
-      .catch(() => vm.error = 'Hm, something went wrong. Please try later!');
-      vm.loading = false;
+      .catch(() => {
+        vm.error = 'Hm, something went wrong. Please try later!';
+        vm.loading = false;
+      });
     };
 
     vm.getBeers();
