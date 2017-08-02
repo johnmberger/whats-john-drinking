@@ -13,10 +13,14 @@
       vm.loading = true;
       getTopTen.getBeers()
       .then((res, err) => {
-        vm.topTenBeers = res.data.response.beers.items;
-        vm.loading = false;
+        if (!err) {
+          vm.topTenBeers = res.data.response.beers.items;
+        } else {
+          vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
+        }
       })
-      .catch(() => vm.error = 'Hm, something went wrong.');
+      .catch(() => vm.error = 'Hm, something went wrong. Please try later!');
+      vm.loading = false;
     };
 
     vm.getBeers();
