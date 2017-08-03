@@ -20,7 +20,7 @@
         <div class="card-stacked">
           <div class="card-content">
             <div class="col l9 s12">
-              <span class="card-title">{{checkin.beer.beer_name}} <a href="" data-target="modal-photo-{{$index}}" modal ng-if="checkin.media.count"><i class="material-icons" style="vertical-align: middle; margin-left: 10px; margin-bottom: 3px;">camera_alt</i></a></span>
+              <span class="card-title"><strong>{{checkin.beer.beer_name}}</strong> <a href="" data-target="modal-photo-{{$index}}" modal ng-if="checkin.media.count"><i class="material-icons" style="vertical-align: middle; margin-left: 10px; margin-bottom: 3px;">camera_alt</i></a></span>
               <p>{{checkin.brewery.brewery_name}}</p>
               <p>{{checkin.beer.beer_style}} <span class="grey-text">({{checkin.beer.beer_abv}}% abv)</p>
               <a href="" data-target="modal{{$index}}" modal ng-if="checkin.venue.venue_name"><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
@@ -31,13 +31,12 @@
               <img ng-if="checkin.beer.beer_label | noStockPhoto" src="{{checkin.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
             </div>
             <div class="col s12">
+              <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
               <br>
               <div class="chip" ng-repeat="badge in checkin.badges.items">
                 <img src="{{badge.badge_image.sm}}" alt="badge">
                 {{badge.badge_name}}
               </div>
-              <br>
-              <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
             </div>
           </div>
         </div>

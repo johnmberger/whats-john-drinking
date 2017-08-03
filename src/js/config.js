@@ -44,9 +44,6 @@
         templateUrl: 'html/main.html'
       })
       .otherwise('/');
-
-      $locationProvider.html5Mode(true);
-      $locationProvider.hashPrefix('');
     }
 
 })();

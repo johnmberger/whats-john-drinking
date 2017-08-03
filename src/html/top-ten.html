@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container beer-cards">
   <div class="row" ng-if="topTenCtrl.loading">
     <div class="col s12 loading">
       <div class="preloader-wrapper big active center-align">
@@ -20,17 +20,16 @@
         <div class="card-stacked">
           <div class="card-content">
             <div class="col l9 s12">
-              <span class="card-title">{{$index + 1}}. {{topBeer.beer.beer_name}}</span>
+              <span class="card-title"><strong>{{$index + 1}}. {{topBeer.beer.beer_name}}</strong></span>
               <p>{{topBeer.brewery.brewery_name}}</p>
               <p>{{topBeer.beer.beer_style}} <span class="grey-text">({{topBeer.beer.beer_abv}}% abv)</p>
               <br>
-              <p>Imbibed on: {{topBeer.recent_created_at | dateFormat | date:'longDate'}}</p>
+              <p>Imbibed on {{topBeer.recent_created_at | dateFormat | date:'longDate'}}</p>
               <br>
+              <p ng-if="topBeer.rating_score > 0">My score: <span class="stars-container stars-{{topBeer.rating_score * 20}}">★★★★★</span></p>
             </div>
             <div class="col l3 s12">
               <img ng-if="topBeer.beer.beer_label | noStockPhoto" src="{{topBeer.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
-              <br>
-              <p ng-if="topBeer.rating_score > 0">My score: <span class="stars-container stars-{{topBeer.rating_score * 20}}">★★★★★</span></p>
             </div>
           </div>
         </div>
