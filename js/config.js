@@ -35,6 +35,11 @@
         controller: 'topTenController',
         controllerAs: 'topTenCtrl'
       })
+      .when('/stats', {
+        templateUrl: 'html/stats.html',
+        controller: 'statsController',
+        controllerAs: 'statsCtrl'
+      })
       .when('/', {
         templateUrl: 'html/main.html'
       })
