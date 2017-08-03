@@ -19,8 +19,8 @@
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content">
-            <div class="col l6 s12">
-              <span class="card-title">{{checkin.beer.beer_name}}</span>
+            <div class="col l9 s12">
+              <span class="card-title">{{checkin.beer.beer_name}} <a href="" data-target="modal-photo-{{$index}}" modal ng-if="checkin.media.count"><i class="material-icons" style="vertical-align: middle; margin-left: 10px; margin-bottom: 3px;">camera_alt</i></a></span>
               <p>{{checkin.brewery.brewery_name}}</p>
               <p>{{checkin.beer.beer_style}} <span class="grey-text">({{checkin.beer.beer_abv}}% abv)</p>
               <a href="" data-target="modal{{$index}}" modal ng-if="checkin.venue.venue_name"><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
@@ -28,7 +28,7 @@
               <blockquote>{{checkin.checkin_comment}}</blockquote>
               <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
             </div>
-            <div class="col l6 s12">
+            <div class="col l3 s12">
               <img ng-if="checkin.beer.beer_label | noStockPhoto" src="{{checkin.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
             </div>
             <div class="col s12">
@@ -44,6 +44,12 @@
         <div class="modal-content center-align">
           <h4>{{checkin.venue.venue_name}}</h4>
           <img class="responsive-img" src="https://maps.googleapis.com/maps/api/staticmap?center={{checkin.venue.location.lat}},{{checkin.venue.location.lng}}&zoom=12&size=600x300&maptype=roadmap&markers=color:blue%7C{{checkin.venue.location.lat}},{{checkin.venue.location.lng}}&key=AIzaSyCJFMlJMIdwv3cTxbHhOFYR2Z8obJlINes" alt="">
+        </div>
+      </div>
+      <div id="modal-photo-{{$index}}" class="modal" ng-if="checkin.media.count">
+        <div class="modal-content center-align">
+          <h4>{{checkin.venue.venue_name}}</h4>
+          <img class="responsive-img" src="{{checkin.media.items[0].photo.photo_img_lg}}">
         </div>
       </div>
     </div>

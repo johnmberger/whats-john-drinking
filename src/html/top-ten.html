@@ -16,9 +16,24 @@
   </div>
   <div class="row" ng-repeat="topBeer in topTenCtrl.topTenBeers">
     <div class="col s12">
-      <h3 class="header">{{topBeer.beer.beer_name}} - <small>{{topBeer.brewery.brewery_name}}</small><img src="{{topBeer.beer.beer_label}}" alt="beer" class="circle responsive-img"></h3>
-    </div>
-  </div>
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <div class="col l9 s12">
+              <span class="card-title">{{$index + 1}}. {{topBeer.beer.beer_name}}</span>
+              <p>{{topBeer.brewery.brewery_name}}</p>
+              <p>{{topBeer.beer.beer_style}} <span class="grey-text">({{topBeer.beer.beer_abv}}% abv)</p>
+              <br>
+              <p>Imbibed on: {{topBeer.recent_created_at | dateFormat | date:'longDate'}}</p>
+              <br>
+              <p ng-if="topBeer.rating_score > 0">My score: <span class="stars-container stars-{{topBeer.rating_score * 20}}">★★★★★</span></p>
+            </div>
+            <div class="col l3 s12">
+              <img ng-if="topBeer.beer.beer_label | noStockPhoto" src="{{topBeer.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
+            </div>
+          </div>
+        </div>
+      </div>
   <div ng-if="topTenCtrl.error">
     <div class="row">
       <div class="col s12">
