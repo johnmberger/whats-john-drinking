@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container beer-cards">
   <div class="row" ng-if="listCtrl.loading">
     <div class="col s12 loading">
       <div class="preloader-wrapper big active center-align">
@@ -16,19 +16,22 @@
   </div>
   <div class="row" ng-repeat="checkin in listCtrl.checkIns">
     <div class="col s12">
-      <ng-rate-it ng-model="test.rateit"></ng-rate-it>
-      <h3 class="header">{{checkin.beer.beer_name}} - <small>{{checkin.brewery.brewery_name}}</small><img ng-if="checkin.beer.beer_label" src="{{checkin.beer.beer_label}}" alt="beer" class="circle responsive-img"></h3>
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content">
-            <p>{{checkin.beer.beer_abv}}% abv</p>
-            <p>{{checkin.beer.beer_style}}</p>
-            <a href="" data-target="modal{{$index}}" modal ng-if="checkin.venue.venue_name"><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
-            <p>{{checkin.created_at | dateFormat | date:'longDate'}}</p>
-            <p>{{checkin.checkin_comment}}</p>
-            <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
-            <div class="card-action" ng-if="checkin.badges.items.length">
-              <h5>Badges Earned</h5>
+            <div class="col l6 s12">
+              <span class="card-title">{{checkin.beer.beer_name}}</span>
+              <p>{{checkin.brewery.brewery_name}}</p>
+              <p>{{checkin.beer.beer_style}} <span class="grey-text">({{checkin.beer.beer_abv}}% abv)</p>
+              <a href="" data-target="modal{{$index}}" modal ng-if="checkin.venue.venue_name"><i class="tiny material-icons">location_on</i> {{checkin.venue.venue_name}}</a>
+              <p>{{checkin.created_at | dateFormat | date:'longDate'}}</p>
+              <blockquote>{{checkin.checkin_comment}}</blockquote>
+              <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
+            </div>
+            <div class="col l6 s12">
+              <img ng-if="checkin.beer.beer_label | noStockPhoto" src="{{checkin.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
+            </div>
+            <div class="col s12">
               <div class="chip" ng-repeat="badge in checkin.badges.items">
                 <img src="{{badge.badge_image.sm}}" alt="badge">
                 {{badge.badge_name}}

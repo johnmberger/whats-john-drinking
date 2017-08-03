@@ -16,6 +16,11 @@
   }
 }
 
+body {
+  background: url('../assets/background.png');
+  background-repeat: repeat;
+}
+
 .mobile-nav-header {
   height: 250px;
 }
@@ -28,6 +33,10 @@
 }
 .custom-divider {
   margin-top: 0px !important;
+}
+
+.beer-cards {
+  padding-top: 25px;
 }
 
 /* stars */
