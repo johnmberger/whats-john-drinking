@@ -27,9 +27,12 @@
             <p>{{checkin.created_at | dateFormat | date:'longDate'}}</p>
             <p>{{checkin.checkin_comment}}</p>
             <p ng-if="checkin.rating_score > 0">My score: <span class="stars-container stars-{{checkin.rating_score * 20}}">★★★★★</span></p>
-            <div class="chip" ng-repeat="badge in checkin.badges.items">
-              <img src="{{badge.badge_image.sm}}" alt="badge">
-              {{badge.badge_name}}
+            <div class="card-action" ng-if="checkin.badges.items.length">
+              <h5>Badges Earned</h5>
+              <div class="chip" ng-repeat="badge in checkin.badges.items">
+                <img src="{{badge.badge_image.sm}}" alt="badge">
+                {{badge.badge_name}}
+              </div>
             </div>
           </div>
         </div>
