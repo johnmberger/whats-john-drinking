@@ -15,7 +15,6 @@
       .then((res, err) => {
         if (!err) {
           vm.checkIns = res.data.response.checkins.items;
-          console.log(res.data.response.checkins.items);
         } else {
           vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
         }

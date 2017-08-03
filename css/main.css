@@ -68,6 +68,10 @@ body {
   overflow: hidden;
 }
 
+.chip {
+  overflow-x: hidden;
+}
+
 .stars-0:after {
   width: 0%;
 }
