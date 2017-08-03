@@ -26,10 +26,11 @@
               <br>
               <p>Imbibed on: {{topBeer.recent_created_at | dateFormat | date:'longDate'}}</p>
               <br>
-              <p ng-if="topBeer.rating_score > 0">My score: <span class="stars-container stars-{{topBeer.rating_score * 20}}">★★★★★</span></p>
             </div>
             <div class="col l3 s12">
               <img ng-if="topBeer.beer.beer_label | noStockPhoto" src="{{topBeer.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
+              <br>
+              <p ng-if="topBeer.rating_score > 0">My score: <span class="stars-container stars-{{topBeer.rating_score * 20}}">★★★★★</span></p>
             </div>
           </div>
         </div>
