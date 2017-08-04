@@ -44,6 +44,10 @@ body {
   margin-top: 70vh;
 }
 
+.loading {
+  margin-bottom: 40px;
+}
+
 /* stars */
 .stars-container {
   position: relative;
