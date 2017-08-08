@@ -20,7 +20,7 @@
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content">
-            <div class="col l9 s12">
+            <div class="col m9 s12">
               <span class="card-title"><strong>{{checkin.beer.beer_name}}</strong> <a href="" data-target="modal-photo-{{$index}}" modal ng-if="checkin.media.count"><i class="material-icons" style="vertical-align: middle; margin-left: 10px; margin-bottom: 3px;">camera_alt</i></a></span>
               <p>{{checkin.brewery.brewery_name}}</p>
               <p>{{checkin.beer.beer_style}} <span class="grey-text">({{checkin.beer.beer_abv}}% abv)</p>
@@ -28,7 +28,7 @@
               <p>{{checkin.created_at | dateFormat | date:'longDate'}}</p>
               <blockquote>{{checkin.checkin_comment}}</blockquote>
             </div>
-            <div class="col l3 s12">
+            <div class="col m3 s12">
               <img ng-if="checkin.beer.beer_label | noStockPhoto" src="{{checkin.beer.beer_label | noStockPhoto}}" alt="beer" class="responsive-img">
             </div>
             <div class="col s12">
