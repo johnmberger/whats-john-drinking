@@ -22,6 +22,10 @@ body {
   background-repeat: repeat;
 }
 
+.first-row {
+  margin-top: 40px;
+}
+
 .mobile-nav-header {
   height: 250px;
 }

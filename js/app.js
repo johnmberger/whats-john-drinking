@@ -13,7 +13,9 @@
       'beerTracker.components.topTen',
       'beerTracker.components.stats',
       'getBeers',
-      'getTopTen'
+      'getTopTen',
+      'getStats',
+      'chart.js'
     ]);
 
 })();

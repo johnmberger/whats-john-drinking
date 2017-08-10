@@ -1,4 +1,54 @@
 <div class="container">
-  <br>
-  <h1 class="red-text">Coming Soon!</h1>
+  <div class="row" ng-if="statsCtrl.loading">
+    <div class="col s12 loading">
+      <div class="preloader-wrapper big active center-align">
+        <div class="spinner-layer spinner-red-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="center-align red-text loading-text">Tapping the kegs...</p>
+  </div>
+  <div class="row first-row">
+    <div class="col s12">
+      <h4 ng-if="statsCtrl.loading != true" class="center-align indigo-text indigo-text">What Kinds of Beer I Drink</h4>
+      <canvas id="doughnut" class="chart chart-doughnut" chart-data="statsCtrl.styleData" chart-labels="statsCtrl.styleLabels" chart-colors="statsCtrl.styleColors" style="width: 300px; height: 200px"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h4 ng-if="statsCtrl.loading != true" class="center-align indigo-text">How I Rate Beer</h4>
+      <canvas id="bar" class="chart chart-bar" chart-data="statsCtrl.ratingData" chart-labels="statsCtrl.ratingLabels" chart-colors="statsCtrl.ratingColors" style="width: 300px; height: 200px"></canvas>
+      <p ng-if="statsCtrl.loading != true" class="center-align indigo-text">(Average Rating: {{statsCtrl.avgRating}})</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h4 ng-if="statsCtrl.loading != true" class="center-align indigo-text">Months I Drink Beer</h4>
+      <canvas id="line" class="chart chart-line" chart-data="statsCtrl.monthData" chart-labels="statsCtrl.monthLabels" chart-colors="statsCtrl.lineColors" style="width: 300px; height: 200px"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h4 ng-if="statsCtrl.loading != true" class="center-align indigo-text">Days I Drink Beer</h4>
+      <canvas id="line" class="chart chart-line" chart-data="statsCtrl.dayData" chart-labels="statsCtrl.dayLabels" chart-colors="statsCtrl.lineColors" style="width: 300px; height: 200px"></canvas>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <h4 ng-if="statsCtrl.loading != true" class="center-align indigo-text">Hours I Drink Beer</h4>
+      <canvas id="line" class="chart chart-line" chart-data="statsCtrl.hourData" chart-labels="statsCtrl.hourLabels" chart-colors="statsCtrl.lineColors" style="width: 300px; height: 200px"></canvas>
+  </div>
+  <div ng-if="statsCtrl.error">
+    <div class="row">
+      <div class="col s12">
+        <h3 class="header">{{statsCtrl.error}}</h3>
+      </div>
+    </div>
+  </div>
 </div>
