@@ -21,7 +21,7 @@
         vm.loading = false;
       })
       .catch(() => {
-        vm.error = 'Hm, something went wrong. Please try later!';
+        vm.error = 'Untappd is mad at us right now. Try back in an hour or so!';
         vm.loading = false;
       });
     };
