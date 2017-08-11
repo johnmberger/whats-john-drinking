@@ -6,8 +6,10 @@
 
   statsController.$inject = ['$scope', 'getStats'];
 
-  function statsController($scope, getStats) {
+  function statsController($scope, getStats, $window) {
     let vm = this;
+
+    $window.scrollTo(0, 0);
 
     vm.stats = () => {
 
