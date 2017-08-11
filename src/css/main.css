@@ -51,6 +51,10 @@ body {
 .loading {
   margin-bottom: 40px;
 }
+.sad-mac {
+  max-height: 150px;
+  margin: 0 auto;
+}
 
 /* stars */
 .stars-container {
