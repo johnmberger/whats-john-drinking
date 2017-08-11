@@ -22,6 +22,12 @@ body {
   background-repeat: repeat;
 }
 
+.card-header {
+  padding: 15px 10px 20px 20px;
+  background: firebrick;
+  color: white;
+}
+
 .stats {
   margin: 40px inherit;
 }
