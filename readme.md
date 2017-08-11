@@ -2,6 +2,6 @@
 
 I got sick of the [Untappd](https://untappd.com/) UI, so I built my own site to track the beer I've been drinking.
 
-The ultimate goal here is to have a really badass visualization of all the stats about my beer drinking habits, but first I need to learn Chart.js or D3.js ...
+This little site currently shows the feed of beers I've checked into Untappd, my top 10 rated beers, and some relatively simple visualizations about my drinking habits. I hope to add more categories in the future.
 
-Stay tuned!
+There's more to come, so stay tuned!
