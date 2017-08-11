@@ -18,10 +18,13 @@
   <div class="row" ng-repeat="topBeer in topTenCtrl.topTenBeers">
     <div class="col s12">
       <div class="card horizontal">
+        <div class="card-header">
+          <span class="card-title"># {{$index + 1}}&nbsp;</span>
+        </div>
         <div class="card-stacked">
           <div class="card-content">
             <div class="col l9 s12">
-              <span class="card-title"><strong>{{$index + 1}}. {{topBeer.beer.beer_name}}</strong></span>
+              <span class="card-title"><strong>{{topBeer.beer.beer_name}}</strong></span>
               <p>{{topBeer.brewery.brewery_name}}</p>
               <p>{{topBeer.beer.beer_style}} <span class="grey-text">({{topBeer.beer.beer_abv}}% abv)</p>
               <br>
