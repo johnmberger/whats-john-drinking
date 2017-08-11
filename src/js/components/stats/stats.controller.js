@@ -4,7 +4,7 @@
     .module('beerTracker.components.stats', [])
     .controller('statsController', statsController);
 
-  statsController.$inject = ['$scope', 'getStats'];
+  statsController.$inject = ['$scope', 'getStats', '$window'];
 
   function statsController($scope, getStats, $window) {
     let vm = this;
