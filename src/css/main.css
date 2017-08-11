@@ -22,6 +22,10 @@ body {
   background-repeat: repeat;
 }
 
+.stats {
+  margin: 40px inherit;
+}
+
 .first-row {
   margin-top: 40px;
 }
