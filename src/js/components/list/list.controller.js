@@ -13,11 +13,8 @@
       vm.loading = true;
       getBeers.getCheckIns()
       .then((res, err) => {
-        if (!err) {
-          vm.checkIns = res.data.response.checkins.items;
-        } else {
-          vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
-        }
+        if (!err) vm.checkIns = res.data.response.checkins.items;
+        else vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
         vm.loading = false;
       })
       .catch(() => {

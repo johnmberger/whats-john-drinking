@@ -44,9 +44,7 @@
             vm.ratingData.push(rating.count);
           });
 
-        } else {
-          vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
-        }
+        } else vm.error = 'We\'re having trouble connecting to Untappd. Please try later!';
         vm.loading = false;
       })
       .catch(() => {
