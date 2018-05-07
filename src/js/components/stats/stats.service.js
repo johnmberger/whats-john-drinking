@@ -8,7 +8,7 @@
 
   function getStats($http) {
     let vm = this;
-    vm.getStats = () => $http({method: 'GET', url: 'http://beer-proxy.herokuapp.com/stats'});
+    vm.getStats = () => $http({method: 'GET', url: 'https://beer-proxy.herokuapp.com/stats'});
   }
 
 })();
