@@ -8,7 +8,7 @@
 
   function GetTopTen($http) {
     let vm = this;
-    vm.getBeers = () => $http({method: 'GET', url: 'http://beer-proxy.herokuapp.com/top-ten'});
+    vm.getBeers = () => $http({method: 'GET', url: 'https://beer-proxy.herokuapp.com/top-ten'});
   }
 
 })();
